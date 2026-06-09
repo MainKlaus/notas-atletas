@@ -40,5 +40,5 @@ function calcularMedias(atletas) {
 
 }
 
-// executa a função
+
 calcularMedias(atletas);
