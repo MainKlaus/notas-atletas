@@ -17,28 +17,14 @@ let atletas = [
   }
 ];
 
-function calcularMedias(atletas) {
+atletas.forEach(atleta => {
 
-  atletas.forEach(atleta => {
+  let notas = atleta.notas.sort((a, b) => a - b);
 
-   
-    let notas = atleta.notas.sort((a, b) => a - b);
+  let media = (notas[1] + notas[2] + notas[3]) / 3;
 
-  
-    let notasValidas = notas.slice(1, 4);
-
-   
-    let soma = notasValidas.reduce((acc, n) => acc + n, 0);
-    let media = soma / notasValidas.length;
-
-   
-    console.log(`Atleta: ${atleta.nome}`);
-    console.log(`Notas Obtidas: ${atleta.notas.join(",")}`);
-    console.log(`Média Válida: ${media}`);
-    console.log("");
-  });
-
-}
-
-
-calcularMedias(atletas);
+  console.log("Atleta:", atleta.nome);
+  console.log("Notas:", atleta.notas.join(","));
+  console.log("Média válida:", media);
+  console.log("");
+});
